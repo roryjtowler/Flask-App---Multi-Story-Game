@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block top %}
+  {% if top != None  %}
+    <p1> <a href="/{{topID}}">{{top}}</a> </p1>
+  {% else %}S
+    <form action="/createStory" method="POST">
+      <input type="hidden" name="grid_square_pos" value="top">
+      <input type="hidden" name="id" value="{{ currentID }}">
+      <textarea name="sentence" placeholder="Variant 1" required></textarea>
+      <div><input type="submit"></div>
+    </form>
+  {% endif %}
+{% endblock %}
+
+{% block left %}
+  {% if left != None  %}
+    <p1> <a href="/{{leftID}}">{{left}}</a> </p1>
+  {% else %}
+    <form action="/createStory" method="POST">
+      <input type="hidden" name="grid_square_pos" value="left">
+      <input type="hidden" name="id" value="{{ currentID }}">
+      <textarea name="sentence" placeholder="Variant 2" required></textarea>
+      <div><input type="submit"></div>
+    </form>
+  {% endif %}
+{% endblock %}
+
+{% block right %}
+  {% if right != None  %}
+    <p1> <a href="/{{rightID}}">{{right}}</a> </p1>
+  {% else %}
+    <form action="/createStory" method="POST">
+      <input type="hidden" name="grid_square_pos" value="right">
+      <input type="hidden" name="id" value="{{ currentID }}">
+      <textarea name="sentence" placeholder="Variant 3" required></textarea>
+      <div><input type="submit"></div>
+    </form>
+  {% endif %}
+{% endblock %}
+
+{% block bottom %}
+  {% if bottom != None  %}
+    <p1> <a href="/{{bottomID}}">{{bottom}}</a> </p1>
+  {% else %}
+    <form action="/createStory" method="POST">
+      <input type="hidden" name="grid_square_pos" value="bottom">
+      <input type="hidden" name="id" value="{{ currentID }}">
+      <textarea name="sentence" placeholder="Variant 4" required></textarea>
+      <div><input type="submit"></div>
+    </form>
+  {% endif %}
+{% endblock %}

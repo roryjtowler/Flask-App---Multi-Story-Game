@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+    <header class="header">
+      <h1> Hello welcome to the multi-story game </h1>
+      <h4> please enter your first line below: </h4>
+    </header>
+  </head>
+
+  <body>
+    <div class="homeform">
+      <form action="/createStory" method="POST">
+        <input type="hidden" name="grid_square_pos" value="middle">
+        <input type="hidden"name="id" value="1">
+        <textarea name="sentence" placeholder="Once upon a time..." required></textarea>
+        <div><input type="submit"></div>
+      </form>
+    </div>
+  </body>
+
+</html>
